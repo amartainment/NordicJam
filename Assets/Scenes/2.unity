@@ -3725,7 +3725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fc44c34450bda409fee457ef67221d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playingGame: 0
+  playingGame: 1
   playerSpeed: 20
   isGrounded: 0
   feetPos: {fileID: 1454959016}
@@ -4123,7 +4123,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569554399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4178,7 +4178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4d3b4f4b318c145bf61cd4f8f47473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScenesIndex: 0
+  thisScenesIndex: 1
   screenIndex: 0
   greyScreen: {fileID: 1138512427}
   launch: {fileID: 21300000, guid: e4caeb578819ada4c85e221e32400a72, type: 3}
@@ -4193,7 +4193,7 @@ BoxCollider:
   m_GameObject: {fileID: 569554399}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.166983, y: 4.166992, z: 0.42402202}
   m_Center: {x: 0, y: -0.00000027044317, z: -0.33603412}
@@ -7343,7 +7343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1138512428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12729,7 +12729,7 @@ GameObject:
   - component: {fileID: 2123660714}
   - component: {fileID: 2123660715}
   m_Layer: 8
-  m_Name: Coin
+  m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

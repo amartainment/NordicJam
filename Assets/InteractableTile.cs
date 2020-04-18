@@ -20,7 +20,7 @@ public class InteractableTile : MonoBehaviour
         
     }
 
-    public void Interact(string item, GameObject prefab2D, objectBehavior realObject)
+    public void Interact(string item, GameObject prefab2D, objectBehavior realObject, Vector3 pos)
     {
         /*
         if(myCollider.isTrigger)
@@ -39,6 +39,7 @@ public class InteractableTile : MonoBehaviour
         if(!turned)
         {
             Vector3 offset = new Vector3(0, 0, -0.2f);
+            
             GameObject object2D = Instantiate(prefab2D, transform.position + offset, Quaternion.Euler(0,0,180),null);
             realObject.setObject2D(object2D);
             

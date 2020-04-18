@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior2D : MonoBehaviour
 {
+    
     public bool playingGame = false;
     public float playerSpeed;
     Rigidbody playerBody;
@@ -21,16 +23,22 @@ public class PlayerBehavior2D : MonoBehaviour
     public GameObject tvGrey;
     AudioSource myAudioSource;
     public AudioClip jumpSound;
+    ScreenManager screenDude;
     // Start is called before the first frame update
     void Start()
     {
+        myAudioSource = GetComponent<AudioSource>();
+        myAudioSource.loop = false;
+        myAudioSource.playOnAwake = false;
         playerBody = GetComponent<Rigidbody>();
+        screenDude = GameObject.Find("ScreenManager").GetComponent<ScreenManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         checkIfPlayingGame();
+        Death();
         if (playingGame)
         {
             moveInput = Input.GetAxisRaw("Horizontal") * playerSpeed;
@@ -38,6 +46,7 @@ public class PlayerBehavior2D : MonoBehaviour
             {
                 jumpTimeCounter = JumpTime;
                 isJumping = true;
+                myAudioSource.PlayOneShot(jumpSound);
             }
 
             if(Input.GetButton("Jump") &isJumping)
@@ -62,6 +71,15 @@ public class PlayerBehavior2D : MonoBehaviour
         }
     }
 
+    public void Death()
+    {
+        if(transform.position.y < 5.5f)
+        {
+            screenDude.showLoseScreen();
+            
+           // SceneManager.LoadScene(1);
+        }
+    }
     private void FixedUpdate()
     {
         

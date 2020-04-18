@@ -110,12 +110,12 @@ public class ReticuleBehavior : MonoBehaviour
                     {
                         moddedHitPoint = new Vector3(hit.point.x, hit.point.y, 1.3f);
 
-                        TwoDHit.collider.gameObject.GetComponent<InteractableTile>().Interact("a", currentObject.prefab2D, currentObject);
+                        TwoDHit.collider.gameObject.GetComponent<InteractableTile>().Interact("a", currentObject.prefab2D, currentObject, TwoDHit.point);
                         currentObject.Use(moddedHitPoint);
                     }
                 }
             
-                Debug.Log(TwoDHit.collider.gameObject);
+               
             }
         }
     }
