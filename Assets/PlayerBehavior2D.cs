@@ -122,9 +122,16 @@ public class PlayerBehavior2D : MonoBehaviour
             }
         }
     }
-    void checkForInput()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
-        
+        if(other.CompareTag("enemy"))
+        {
+            screenDude.showLoseScreen();
+        }
+        if(other.CompareTag("fire"))
+        {
+            screenDude.showLoseScreen();
+        }
     }
 }

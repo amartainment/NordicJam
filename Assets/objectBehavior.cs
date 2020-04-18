@@ -64,7 +64,7 @@ public class objectBehavior : MonoBehaviour
             Vector3 offset;
             transform.parent = holster;
 
-            if (object2D != null)
+            if (object2D != null && ObjectType!="dart")
             {
                 Destroy(object2D);
             }

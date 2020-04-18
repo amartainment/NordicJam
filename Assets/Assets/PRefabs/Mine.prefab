@@ -10,12 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 671050365955094226}
   - component: {fileID: 483054853308146258}
-  - component: {fileID: 7154766051443142605}
-  - component: {fileID: 6082107962019930971}
   - component: {fileID: 2599774241494984494}
   m_Layer: 8
   m_Name: Mine
-  m_TagString: platform
+  m_TagString: fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,33 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &7154766051443142605
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735670113481304120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.7555996}
-  m_Center: {x: 0, y: 0, z: 0.2777998}
---- !u!114 &6082107962019930971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735670113481304120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 738f2f9970ed9804885c3c4cff6e8ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformSprite: {fileID: 21300000, guid: 913303709ff7b3941badc14995d8355a, type: 3}
-  turned: 0
 --- !u!54 &2599774241494984494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,12 +108,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2513027750556376310}
   - component: {fileID: 7610281157033181698}
-  - component: {fileID: 1118825263652113292}
-  - component: {fileID: 5015087319528848955}
   - component: {fileID: 3406879326058430269}
   m_Layer: 8
   m_Name: Mine (1)
-  m_TagString: platform
+  m_TagString: fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,33 +180,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1118825263652113292
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507867004223074218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.7555996}
-  m_Center: {x: 0, y: 0, z: 0.2777998}
---- !u!114 &5015087319528848955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507867004223074218}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 738f2f9970ed9804885c3c4cff6e8ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformSprite: {fileID: 21300000, guid: 913303709ff7b3941badc14995d8355a, type: 3}
-  turned: 0
 --- !u!54 &3406879326058430269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -265,12 +207,11 @@ GameObject:
   - component: {fileID: 7823258690829902835}
   - component: {fileID: 7823258690829902828}
   - component: {fileID: 7823258690829902834}
-  - component: {fileID: 5357234427499818448}
   - component: {fileID: 6249808769713139992}
   - component: {fileID: 5640198081956044480}
   m_Layer: 8
   m_Name: Mine
-  m_TagString: platform
+  m_TagString: fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,25 +290,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7823258690829902829}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.7555996}
-  m_Center: {x: 0, y: 0, z: 0.2777998}
---- !u!114 &5357234427499818448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7823258690829902829}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 738f2f9970ed9804885c3c4cff6e8ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformSprite: {fileID: 21300000, guid: 913303709ff7b3941badc14995d8355a, type: 3}
-  turned: 0
+  m_Size: {x: 3.091482, y: 1, z: 0.7555996}
+  m_Center: {x: -0.015303493, y: 0, z: 0.2777998}
 --- !u!54 &6249808769713139992
 Rigidbody:
   m_ObjectHideFlags: 0

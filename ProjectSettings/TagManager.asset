@@ -9,6 +9,8 @@ TagManager:
   - platform
   - wall
   - object
+  - enemy
+  - fire
   layers:
   - Default
   - TransparentFX
