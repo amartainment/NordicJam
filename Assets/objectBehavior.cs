@@ -20,13 +20,16 @@ public class objectBehavior : MonoBehaviour
     Quaternion initialRotation;
     Vector3 initialScale;
     Material initialMaterial;
+    public AudioClip associatedSound;
+    AudioSource mySource;
+    public AudioClip takeOffSound;
     void Start()
     {
         initialPos = transform.position;
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
         initialMaterial = GetComponentInChildren<Renderer>().material;
-
+        mySource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -66,7 +69,7 @@ public class objectBehavior : MonoBehaviour
             transform.rotation = Quaternion.Euler(-9.32f, -131.8f, 0f);
             Vector3 offset;
             transform.parent = holster;
-
+            mySource.PlayOneShot(takeOffSound);
             if (object2D != null && ObjectType!="dart")
             {
                 Destroy(object2D);
@@ -98,7 +101,7 @@ public class objectBehavior : MonoBehaviour
     public void Use(Vector3 position)
     {
         transform.parent = null;
-
+        mySource.PlayOneShot(associatedSound);
         Vector3 offset = PlacementOffset.localPosition;
         transform.localScale = new Vector3(0.055f, 0.055f, 0.055f);
         transform.position = position + offset;

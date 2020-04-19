@@ -23,7 +23,7 @@ public class ScreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Jump") && GetComponent<SpriteRenderer>().enabled)
+        if(Input.GetButtonDown("Jump") && GetComponent<SpriteRenderer>().enabled)
         {
             if (myPlayer.playingGame) { 
             GetComponent<SpriteRenderer>().enabled = false;

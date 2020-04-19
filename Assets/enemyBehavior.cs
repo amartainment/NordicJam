@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyBehavior : MonoBehaviour
 {
+    Transform patrolPoint1;
     // Start is called before the first frame update
     void Start()
     {

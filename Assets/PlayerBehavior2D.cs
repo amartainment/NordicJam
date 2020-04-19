@@ -24,6 +24,7 @@ public class PlayerBehavior2D : MonoBehaviour
     AudioSource myAudioSource;
     public AudioClip jumpSound;
     ScreenManager screenDude;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +134,10 @@ public class PlayerBehavior2D : MonoBehaviour
         {
             screenDude.showLoseScreen();
         }
+        if (other.CompareTag("bullet"))
+        {
+            screenDude.showLoseScreen();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -142,6 +147,10 @@ public class PlayerBehavior2D : MonoBehaviour
             screenDude.showLoseScreen();
         }
         if (collision.collider.CompareTag("fire"))
+        {
+            screenDude.showLoseScreen();
+        }
+        if (collision.collider.CompareTag("bullet"))
         {
             screenDude.showLoseScreen();
         }
