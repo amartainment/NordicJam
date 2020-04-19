@@ -11,6 +11,7 @@ TagManager:
   - object
   - enemy
   - fire
+  - bullet
   layers:
   - Default
   - TransparentFX

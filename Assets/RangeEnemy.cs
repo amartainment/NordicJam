@@ -44,6 +44,16 @@ public class RangeEnemy : MonoBehaviour
             playerInRange = false;
             StopCoroutine(fireAShotIn(attackTime));
         }
+
+        if(player2D.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (player2D.position.x >= transform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private IEnumerator fireAShotIn(int seconds)
