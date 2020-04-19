@@ -80,9 +80,9 @@ public class ReticuleBehavior : MonoBehaviour
         if(Physics.Raycast(ray, out hit))
         {
             var selection = hit.transform;
-            if(selection.CompareTag("gridPoint"))
+            if(selection.CompareTag("object"))
             {
-                selection.GetComponent<Renderer>().material = highlightedMaterial;
+                selection.GetComponentInChildren<Renderer>().material = highlightedMaterial;
             }
         }
     }

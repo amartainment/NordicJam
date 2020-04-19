@@ -134,4 +134,16 @@ public class PlayerBehavior2D : MonoBehaviour
             screenDude.showLoseScreen();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("enemy"))
+        {
+            screenDude.showLoseScreen();
+        }
+        if (collision.collider.CompareTag("fire"))
+        {
+            screenDude.showLoseScreen();
+        }
+    }
 }

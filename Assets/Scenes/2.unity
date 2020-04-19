@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f355e73a48c09441a1cf15db83cb3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlighted: {fileID: 2100000, guid: a019990904f6ed04a86854f9287a7b96, type: 2}
   object2D: {fileID: 0}
   PlacementOffset: {fileID: 175356150}
   prefab2D: {fileID: 7823258690829902829, guid: a86d67074c7bc7642bb892a2914ab511,
@@ -10482,6 +10483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f355e73a48c09441a1cf15db83cb3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlighted: {fileID: 2100000, guid: a019990904f6ed04a86854f9287a7b96, type: 2}
   object2D: {fileID: 0}
   PlacementOffset: {fileID: 1384096334}
   prefab2D: {fileID: 7823258690829902829, guid: 3c0424a27adbd4840a857a49fdf98024,
@@ -10523,6 +10525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f355e73a48c09441a1cf15db83cb3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlighted: {fileID: 0}
   object2D: {fileID: 0}
   PlacementOffset: {fileID: 2069445522}
   prefab2D: {fileID: 7823258690829902829, guid: a86d67074c7bc7642bb892a2914ab511,

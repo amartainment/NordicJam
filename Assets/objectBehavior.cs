@@ -5,6 +5,7 @@ using UnityEngine;
 public class objectBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Material highlighted;
     public GameObject object2D;
     Vector3 holsterPosition;
     public Transform PlacementOffset;
@@ -18,11 +19,13 @@ public class objectBehavior : MonoBehaviour
     Vector3 initialPos;
     Quaternion initialRotation;
     Vector3 initialScale;
+    Material initialMaterial;
     void Start()
     {
         initialPos = transform.position;
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
+        initialMaterial = GetComponentInChildren<Renderer>().material;
 
     }
 
@@ -71,6 +74,15 @@ public class objectBehavior : MonoBehaviour
         }
     }
 
+    private void OnMouseOver()
+    {
+        GetComponentInChildren<Renderer>().material = highlighted;    
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponentInChildren<Renderer>().material = initialMaterial;
+    }
     public void returnToStart()
     {
         equipped = false;
