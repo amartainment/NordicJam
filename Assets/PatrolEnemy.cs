@@ -14,6 +14,7 @@ public class PatrolEnemy : MonoBehaviour
     public float speed;
     bool goingForward = true;
     public bool started = false;
+    public float decisionTime = 2f;
  
    
     void Start()
@@ -30,7 +31,7 @@ public class PatrolEnemy : MonoBehaviour
 
     public void startEnemy()
     {
-        StartCoroutine(DoThisEvery(3));
+        StartCoroutine(DoThisEvery(decisionTime));
     }
     // Update is called once per frame
     void Update()
@@ -73,7 +74,7 @@ public class PatrolEnemy : MonoBehaviour
         }
     }
 
-    private IEnumerator DoThisEvery(int seconds)
+    private IEnumerator DoThisEvery(float seconds)
     {
         while (true)
         {

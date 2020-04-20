@@ -23,6 +23,10 @@ public class objectBehavior : MonoBehaviour
     public AudioClip associatedSound;
     AudioSource mySource;
     public AudioClip takeOffSound;
+    public GameObject pickUpText;
+    public GameObject returnText;
+    public GameObject angledPick;
+    GameObject activeText;
     void Start()
     {
         initialPos = transform.position;
@@ -40,9 +44,9 @@ public class objectBehavior : MonoBehaviour
 
     public void Interact(Transform itemHolder)
     {
-        
-            
-            
+
+
+        pickUpText.SetActive(false);
             transform.position = itemHolder.position;
             transform.rotation = Quaternion.Euler(-9.32f, -131.8f, 0f);
             Vector3 offset;
@@ -74,17 +78,58 @@ public class objectBehavior : MonoBehaviour
             {
                 Destroy(object2D);
             }
+
+          
+
         }
     }
 
     private void OnMouseOver()
     {
-        GetComponentInChildren<Renderer>().material = highlighted;    
+        GetComponentInChildren<Renderer>().material = highlighted;
+
+        if (equipped)
+        {
+
+            returnText.SetActive(true);
+            pickUpText.SetActive(false);
+
+        }
+        else
+        {
+            if (ObjectType != "dart")
+            {
+                returnText.SetActive(false);
+                pickUpText.SetActive(true);
+            } else
+            {
+                if(used)
+                {
+                    angledPick.SetActive(true);
+                    pickUpText.SetActive(false);
+                    returnText.SetActive(false);
+                } else
+                {
+                    angledPick.SetActive(false);
+                    pickUpText.SetActive(true);
+                    returnText.SetActive(false);
+                }
+            }
+        }
+
+        
+        
     }
 
     private void OnMouseExit()
     {
         GetComponentInChildren<Renderer>().material = initialMaterial;
+        returnText.SetActive(false);
+        pickUpText.SetActive(false);
+        if(ObjectType == "dart")
+        {
+            angledPick.SetActive(false);
+        }
     }
     public void returnToStart()
     {
@@ -124,7 +169,10 @@ public class objectBehavior : MonoBehaviour
         used = true;
         equipped = false;
         GameObject.Find("_gm").GetComponent<ReticuleBehavior>().currentObject = null;
-        
+        if (ObjectType == "dart")
+        {
+            
+        }
     }
 
     public void setObject2D(GameObject obj)

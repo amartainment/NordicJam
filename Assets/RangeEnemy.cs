@@ -6,7 +6,7 @@ public class RangeEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public float attackRange;
-    public int attackTime = 2;
+    public float attackTime = 2;
     public Transform player2D;
     public bool playerInRange;
     Vector3 directionVector;
@@ -47,16 +47,16 @@ public class RangeEnemy : MonoBehaviour
 
         if(player2D.position.x < transform.position.x)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, transform.localScale.y, 1);
         }
 
         if (player2D.position.x >= transform.position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, transform.localScale.y, 1);
         }
     }
 
-    private IEnumerator fireAShotIn(int seconds)
+    private IEnumerator fireAShotIn(float seconds)
     {
         coroutRunning = true;
         GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);

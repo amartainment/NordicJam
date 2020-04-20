@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
+     bool gameComplete;
     public int thisScenesIndex;
     public int screenIndex = 0;
     PlayerBehavior2D myPlayer;
@@ -16,8 +17,8 @@ public class ScreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlayer = GameObject.Find("Player").GetComponent<PlayerBehavior2D>();
-     
+        myPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior2D>();
+        gameComplete = false;
     }
 
     // Update is called once per frame
@@ -31,7 +32,7 @@ public class ScreenManager : MonoBehaviour
                 if(screenIndex==1)
                 {
                     //winScene - increase 
-                    if (thisScenesIndex == 0)
+                    if (thisScenesIndex == 1)
                     {
                         SceneManager.LoadScene(thisScenesIndex + 2);
                     } else
@@ -43,7 +44,7 @@ public class ScreenManager : MonoBehaviour
                 if (screenIndex == 2)
                 {
                     //lose screen - stay the same 
-                    if (thisScenesIndex == 0)
+                    if (thisScenesIndex == 1)
                     {
                         SceneManager.LoadScene(thisScenesIndex + 1);
                     } else
@@ -64,17 +65,24 @@ public class ScreenManager : MonoBehaviour
 
     public void showWinScreen()
     {
-        GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<BoxCollider>().enabled = true;
-        GetComponent<SpriteRenderer>().sprite = winScreen;
-        screenIndex = 1;
+        if (!gameComplete)
+        {
+            gameComplete = true;
+            GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<BoxCollider>().enabled = true;
+            GetComponent<SpriteRenderer>().sprite = winScreen;
+            screenIndex = 1;
+        }
     }
 
     public void showLoseScreen()
     {
-        GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<BoxCollider>().enabled = true;
-        GetComponent<SpriteRenderer>().sprite = loseScreen;
-        screenIndex = 2;
+        if (!gameComplete)
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<BoxCollider>().enabled = true;
+            GetComponent<SpriteRenderer>().sprite = loseScreen;
+            screenIndex = 2;
+        }
     }
 }

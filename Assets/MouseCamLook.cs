@@ -12,6 +12,7 @@ public class MouseCamLook : MonoBehaviour
 
     void Start()
     {
+        player2D = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior2D>();
         Vector3 rot = transform.localRotation.eulerAngles;
         rotY = rot.y;
         rotX = rot.x;

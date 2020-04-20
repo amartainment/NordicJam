@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 3
-  attackTime: 2
+  attackTime: 1
   player2D: {fileID: 0}
   playerInRange: 0
   bulletPrefab: {fileID: 2227567662600882075, guid: 4cd86eea263459645abffadc60e3838b,
@@ -304,7 +304,7 @@ MonoBehaviour:
   - {fileID: 1899406710911953517}
   - {fileID: 1899406711427272040}
   speed: 0.1
-  started: 0
+  started: 1
 --- !u!82 &5654256557069140172
 AudioSource:
   m_ObjectHideFlags: 0

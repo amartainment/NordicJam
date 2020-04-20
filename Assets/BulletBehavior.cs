@@ -36,4 +36,12 @@ public class BulletBehavior : MonoBehaviour
 
         transform.position += targetDirection.normalized * bulletSpeed * Time.deltaTime;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("platform") || other.CompareTag("outerWall"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

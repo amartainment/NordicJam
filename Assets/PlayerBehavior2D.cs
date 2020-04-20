@@ -33,6 +33,7 @@ public class PlayerBehavior2D : MonoBehaviour
         myAudioSource.playOnAwake = false;
         playerBody = GetComponent<Rigidbody>();
         screenDude = GameObject.Find("ScreenManager").GetComponent<ScreenManager>();
+        tvGrey = GameObject.Find("GreyScreen");
     }
 
     // Update is called once per frame
@@ -128,14 +129,17 @@ public class PlayerBehavior2D : MonoBehaviour
     {
         if(other.CompareTag("enemy"))
         {
+           
             screenDude.showLoseScreen();
         }
         if(other.CompareTag("fire"))
         {
+           
             screenDude.showLoseScreen();
         }
         if (other.CompareTag("bullet"))
         {
+            Destroy(other.gameObject);
             screenDude.showLoseScreen();
         }
     }
@@ -145,14 +149,17 @@ public class PlayerBehavior2D : MonoBehaviour
         if (collision.collider.CompareTag("enemy"))
         {
             screenDude.showLoseScreen();
+
         }
         if (collision.collider.CompareTag("fire"))
         {
             screenDude.showLoseScreen();
+            
         }
         if (collision.collider.CompareTag("bullet"))
         {
             screenDude.showLoseScreen();
+            Destroy(collision.gameObject);
         }
     }
 }
